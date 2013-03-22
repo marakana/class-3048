@@ -56,5 +56,23 @@ public class FibManager {
 			return -1;
 		}
 	}
+	public long fib(FibRequest request) {
+		if(fibService==null) return -1;
+		try {
+			return fibService.fib(request);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+			return -1;
+		}
+	}
+	public void asyncFib(FibRequest request, IFibListener listener) {
+		if(fibService==null) return;
+		try {
+			fibService.asyncFib(request, listener);
+		} catch (RemoteException e) {
+			e.printStackTrace();
+			return;
+		}
+	}
 
 }
