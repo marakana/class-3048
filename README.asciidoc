@@ -1,4 +1,39 @@
 class-3048
 ==========
 
-Santa Clara Internals
+
+== Tuesday ==
+
+* Platform Overview (general platform discussion, overview of 4 application components and there lifecycles)
+* Building Android from Source
+* Customizing Android: up to Building our Device for the First Time
+
+== Wednesday ==
+
+* (Troubleshooting and fixing swap partition on Marabuntu image)
+* (Troubleshooting and fixing build error for 4.2 Alpha)
+* Android Stack: Kernel Layer
+* Customizing Android: Adding a Custom Kernel
+* Android Stack: Native Layer
+* Customizing Android: Adding a Custom Native Library and Executable
+
+== Thursday ==
+
+* Android Stack: Application Framework Layer
+* Android Stack: Application Layer
+* Android Startup
+* Customizing Android: Custom Daemon
+* JNI
+
+
+== Friday ==
+
+The modules remaining (and the order I'd anticipated covering them) are: ==
+
+* Customizing Android: Exposing our Native Library via Java (time permitting, your choice)
+* Customizing Android: Consuming our Custom Library via a Custom App (time permitting, your choice)
+* Android Binder IPC with AIDL
+* Android Security Essentials
+* Android Subsystems
+* Customizing Android: remaining sections (time permitting, your choice)
+* Android Tools and Debugging
