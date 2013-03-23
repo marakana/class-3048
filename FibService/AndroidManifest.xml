@@ -3,6 +3,14 @@
     android:versionCode="1"
     android:versionName="1.0" >
 
+    <permission
+        android:name="com.intel.fib.permission.FIB_SERVICE"
+        android:protectionLevel="signature" />
+    
+    <permission
+        android:name="com.intel.fib.permission.FIB_SERVICE_SLOW"
+        android:protectionLevel="signature" />
+    
     <uses-sdk
         android:minSdkVersion="8"
         android:targetSdkVersion="17" />
@@ -12,13 +20,12 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        
-        <service android:name=".FibService">
-            <intent-filter >
-                <action android:name="com.intel.fibcommon.IFibService"/>
+        <service android:name=".FibService" 
+            android:permission="com.intel.fib.permission.FIB_SERVICE">
+            <intent-filter>
+                <action android:name="com.intel.fibcommon.IFibService" />
             </intent-filter>
         </service>
-        
     </application>
 
 </manifest>

@@ -1,5 +1,7 @@
 package com.intel.fibservice;
 
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.os.RemoteException;
 
 import com.intel.fibcommon.FibRequest;
@@ -7,9 +9,20 @@ import com.intel.fibcommon.IFibListener;
 import com.intel.fibcommon.IFibService;
 
 public class IFibServiceImpl extends IFibService.Stub {
+	private Context context;
+
+	public IFibServiceImpl(Context context) {
+		super();
+		this.context = context;
+	}
 
 	@Override
 	public long fibJ(long n) throws RemoteException {
+		// Check for com.intel.fib.permission.FIB_SERVICE_SLOW
+		if (context
+				.checkCallingOrSelfPermission("com.intel.fib.permission.FIB_SERVICE_SLOW") != PackageManager.PERMISSION_GRANTED) {
+			throw new SecurityException("Unauthorized for com.intel.fib.permission.FIB_SERVICE_SLOW");
+		}
 		return FibLib.fibJ(n);
 	}
 
@@ -37,7 +50,7 @@ public class IFibServiceImpl extends IFibService.Stub {
 		long start = System.currentTimeMillis();
 		long result = fib(request);
 		long time = System.currentTimeMillis() - start;
-		
+
 		listener.onResponse(request.getN(), result, time);
 	}
 }

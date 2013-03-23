@@ -28,7 +28,7 @@ class-3048
 
 == Friday ==
 
-The modules remaining (and the order I'd anticipated covering them) are: ==
+The modules remaining (and the order I'd anticipated covering them) are:
 
 * Customizing Android: Exposing our Native Library via Java (time permitting, your choice)
 * Customizing Android: Consuming our Custom Library via a Custom App (time permitting, your choice)
